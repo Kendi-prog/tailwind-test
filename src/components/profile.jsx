@@ -1,5 +1,5 @@
 import React from "react";
-import useLocalStorage  from "./custom-hook";
+import { useLocalStorage }  from "./custom-hook";
 
 export default function Profile() {
     const [name, setName] = useLocalStorage("username", "Leila");
@@ -12,6 +12,7 @@ export default function Profile() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Enter your name"
+                style={{ padding: "8px", borderRadius: "5px", border: "1px solid #ccc" }}
             />
 
         </div>

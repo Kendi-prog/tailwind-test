@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
 
-export default function useLocalStorage(key, initialValue) {
+export function useLocalStorage(key, initialValue) {
   const[storeValue, setStoreValue] = useState(() => {
     try{
       const item = localStorage.getItem(key);
-      return item ? JSON.parse(item) : initialValue;
+      return  item && item !== '""' ? JSON.parse(item) : initialValue;
     } catch(error) {
       console.error("Error reading the localStorage", error);
       return initialValue;
