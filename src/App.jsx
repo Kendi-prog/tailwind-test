@@ -2,6 +2,7 @@ import './App.css'
 import Profile from './components/profile';
 import Dashboard from './components/dashboard';
 import ExpensiveCalculation from './components/expensive-calculation';
+import UseCallBackFunction from './components/usecallback';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Profile />
       <Dashboard />
       <ExpensiveCalculation />
+      <UseCallBackFunction />
     </div>
   )
 }
