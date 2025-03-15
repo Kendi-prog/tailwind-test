@@ -1,20 +1,19 @@
-import './App.css'
-import Profile from './components/profile';
-import Dashboard from './components/dashboard';
-import ExpensiveCalculation from './components/expensive-calculation';
-import UseCallBackFunction from './components/usecallback';
+import React, { useState } from "react";
+import Modal from "./components/modal";
 
+export default function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-function App() {
   return (
     <div>
-      <h1>My App</h1>
-      <Profile />
-      <Dashboard />
-      <ExpensiveCalculation />
-      <UseCallBackFunction />
+      <h1>React Portals Example</h1>
+      <button onClick={() => setIsModalOpen(true)}>Open Modal</button>
+      
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <h2>This is a Portal Modal</h2>
+        <p>It is rendered outside the normal DOM tree.</p>
+      </Modal>
     </div>
-  )
+  );
 }
 
-export default App
